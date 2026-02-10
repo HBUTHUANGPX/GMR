@@ -26,6 +26,7 @@ ROBOT_XML_DICT = {
     "tienkung": ASSET_ROOT / "tienkung" / "mjcf" / "tienkung.xml",
     "Q1": ASSET_ROOT / "Q1" / "mjcf" / "Q1_wo_hand.xml",
     "X1": ASSET_ROOT / "huaqin_x1_v0_9_6" /  "x1_v0_9_6.xml",
+    "XS3": ASSET_ROOT / "rotaku_xs3" / "mjcf" / "rotaku_xs3_rl.xml",
 }
 
 IK_CONFIG_DICT = {
@@ -47,6 +48,7 @@ IK_CONFIG_DICT = {
         "booster_k1": IK_CONFIG_ROOT / "smplx_to_k1.json",
         "pnd_adam_lite": IK_CONFIG_ROOT / "smplx_to_adam.json",
         "tienkung": IK_CONFIG_ROOT / "smplx_to_tienkung.json",
+        "Q1": IK_CONFIG_ROOT / "smplx_to_Q1.json",
     },
     "bvh":{
         "unitree_g1": IK_CONFIG_ROOT / "bvh_to_g1.json",
@@ -57,12 +59,14 @@ IK_CONFIG_DICT = {
         "engineai_pm01": IK_CONFIG_ROOT / "bvh_to_pm01.json",
         "Q1": IK_CONFIG_ROOT / "bvh_to_Q1.json",
         "kuavo_s52": IK_CONFIG_ROOT / "bvh_to_kuavo_s52.json",
+        "XS3": IK_CONFIG_ROOT / "bvh_to_rotaku_xs3.json",
     },
     "xsens_bvh":{
         "unitree_g1": IK_CONFIG_ROOT / "xsens_bvh_to_g1.json",
         "unitree_h1_2": IK_CONFIG_ROOT / "xsens_bvh_to_h1_2.json",
         "Q1": IK_CONFIG_ROOT / "xsens_bvh_to_Q1.json",
         "X1": IK_CONFIG_ROOT / "xsens_bvh_to_X1.json",
+        "XS3": IK_CONFIG_ROOT / "xsens_bvh_to_rotaku_xs3.json",
     },
     "fbx":{
         "unitree_g1": IK_CONFIG_ROOT / "fbx_to_g1.json",
@@ -94,6 +98,7 @@ ROBOT_BASE_DICT = {
     "tienkung": "Base_link",
     "Q1": "pelvis_link",
     "X1": "base_link",
+    "XS3": "pelvis",
 }
 
 VIEWER_CAM_DISTANCE_DICT = {
@@ -116,4 +121,5 @@ VIEWER_CAM_DISTANCE_DICT = {
     "tienkung": 3.0,
     "Q1": 3.0,
     "X1": 3.0,
+    "XS3": 2.0,
 }

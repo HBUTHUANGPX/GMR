@@ -1,3 +1,4 @@
+# xsens_bvh_to_robot.py
 import argparse
 import pathlib
 import time
@@ -30,6 +31,7 @@ if __name__ == "__main__":
             "unitree_h1_2",
             "Q1",
             "X1",
+            "XS3",
         ],
         default="unitree_h1_2",
     )

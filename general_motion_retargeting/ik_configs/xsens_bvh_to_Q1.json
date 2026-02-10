@@ -2,32 +2,32 @@
     "robot_root_name": "pelvis_link",
     "human_root_name": "Hips",
     "ground_height": 0.0,
-    "human_height_assumption": 1.66,
+    "human_height_assumption": 1.667,
     "use_ik_match_table1": true,
     "use_ik_match_table2": true,
     "human_scale_table": {
         "Hips": 1.05,
-        "Chest4": 1.05,
-        "LeftHip": 1.05,
-        "RightHip": 1.05,
-        "LeftKnee": 1.05,
-        "RightKnee": 1.05,
-        "LeftFootMod": 1.05,
-        "RightFootMod": 1.05,
+        "Chest4": 1.08,
+        "LeftHip": 1.08,
+        "RightHip": 1.08,
+        "LeftKnee": 1.08,
+        "RightKnee": 1.08,
+        "LeftFootMod": 1.08,
+        "RightFootMod": 1.08,
 
-        "LeftShoulder":1.05,
-        "RightShoulder":1.05,
-        "LeftElbow":1.05,
-        "RightElbow":1.05,
-        "RightWrist":1.05,
-        "LeftWrist":1.05,
+        "LeftShoulder":1.08,
+        "RightShoulder":1.08,
+        "LeftElbow":1.08,
+        "RightElbow":1.08,
+        "RightWrist":1.08,
+        "LeftWrist":1.08,
 
-        "Head":1.05
+        "Head":1.08
     },
     "ik_match_table1": {
         "pelvis_link": [
             "Hips",
-            0,
+            100,
             10,
             [
                 0.0,
@@ -35,9 +35,9 @@
                 0.0
             ],
             [
-                1,
+                0.9996573249755573,
                 0.0,
-                0.0,
+                -0.026176948307873153,
                 0.0
             ]
         ],
@@ -144,7 +144,7 @@
             10,
             [
                 0.00,
-                0.016,
+                0.025,
                 0
             ],
             [
@@ -160,7 +160,7 @@
             10,
             [
                 0.0,
-                -0.016,
+                -0.025,
                 0.0
             ],
             [
@@ -386,7 +386,7 @@
             10,
             [
                 0.0,
-                0.016,
+                0.025,
                 0
             ],
             [
@@ -402,7 +402,7 @@
             10,
             [
                 0.0,
-                0.016,
+                0.025,
                 0
             ],
             [
@@ -414,7 +414,7 @@
         ],
         "L_shoulder_yaw_link": [
             "LeftShoulder",
-            5,
+            0,
             5,
             [
                 0.0,
@@ -430,7 +430,7 @@
         ],
         "R_shoulder_yaw_link": [
             "RightShoulder",
-            5,
+            0,
             5,
             [
                 0.0,

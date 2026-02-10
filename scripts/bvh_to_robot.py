@@ -23,7 +23,7 @@ if __name__ == "__main__":
     
     parser.add_argument(
         "--robot",
-        choices=["Q1","unitree_g1", "unitree_g1_with_hands", "booster_t1", "stanford_toddy", "fourier_n1", "engineai_pm01","kuavo_s52"],
+        choices=["XS3","Q1","unitree_g1", "unitree_g1_with_hands", "booster_t1", "stanford_toddy", "fourier_n1", "engineai_pm01","kuavo_s52"],
         default="unitree_g1",
     )
         
@@ -112,6 +112,7 @@ if __name__ == "__main__":
         pbar.update(1)
 
         # Update task targets.
+        # smplx_data = lafan1_data_frames[0]
         smplx_data = lafan1_data_frames[i]
 
         # retarget

@@ -19,16 +19,27 @@ def get_str(_a):
     +"]")
 
 
-roll_angle = 15
+roll_angle = 0
 a = R.from_rotvec([roll_angle, 0, 0],degrees=True).as_quat(scalar_first=True)
 get_str(a)
-a = R.from_rotvec([roll_angle, 90, 0],degrees=True).as_quat(scalar_first=True)
+a = R.from_rotvec([roll_angle, -90, 0],degrees=True).as_quat(scalar_first=True)
 get_str(a)
 a = R.from_rotvec([-roll_angle, 0, 0],degrees=True).as_quat(scalar_first=True)
 get_str(a)
 a = R.from_rotvec([-roll_angle, 90, 0],degrees=True).as_quat(scalar_first=True)
 get_str(a)
-
+a = R.from_rotvec([-roll_angle, 90, 90],degrees=True).as_quat(scalar_first=True)
+get_str(a)
+b = R.from_quat([ -0.5, 0.5, 0.5, 0.5 ], scalar_first=True).as_rotvec(degrees=True)
+print(b)
+b = R.from_quat(
+            [
+                0.5,
+                -0.5,
+                -0.5,
+                -0.5
+            ], scalar_first=True).as_rotvec(degrees=True)
+print(b)
 # a = R.from_rotvec([0, 8, 0],degrees=True).as_quat(scalar_first=True)
 # get_str(a)
 

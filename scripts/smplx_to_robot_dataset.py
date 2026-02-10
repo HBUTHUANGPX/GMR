@@ -22,6 +22,7 @@ import time
 import psutil
 import tracemalloc
 
+
 def check_memory(threshold_gb=30):  # adjust based on your available memory
     mem = psutil.virtual_memory()
     used_memory_gb = (mem.total - mem.available) / (1024 ** 3)
@@ -48,7 +49,6 @@ def process_file(smplx_file_path, tgt_file_path, tgt_robot, SMPLX_FOLDER, tgt_fo
         
     # Initial checks (with optional logging)
     log_memory("Initial memory usage")
-    
     num_pause = 0
     while check_memory():
         print(f"[PAUSE] Paused processing {smplx_file_path} to prevent memory overflow. num_pause: {num_pause}")
@@ -98,7 +98,7 @@ def process_file(smplx_file_path, tgt_file_path, tgt_robot, SMPLX_FOLDER, tgt_fo
         print(f"Error processing {smplx_file_path}: {e}")
         return
     root_rot = qpos_list[:, 3:7]
-    # root_rot[:, [0, 1, 2, 3]] = root_rot[:, [1, 2, 3, 0]]
+    root_rot[:, :] = root_rot[:, [1, 2, 3, 0]] # wxyz to xyzw
     dof_pos = qpos_list[:, 7:]
     num_frames = root_pos.shape[0]
 
@@ -168,7 +168,7 @@ def process_file(smplx_file_path, tgt_file_path, tgt_robot, SMPLX_FOLDER, tgt_fo
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--robot", default="unitree_g1")
+    parser.add_argument("--robot", default="Q1")
     parser.add_argument("--src_folder", type=str,
                         required=True,
                         )

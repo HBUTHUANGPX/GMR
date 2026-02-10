@@ -161,7 +161,8 @@ class mujoco_displayanimanim(pkl_load_and_csv_save):
             frame_idx = start_bias
             while self.viewer.is_running() and frame_idx < frames_len:
                 self.data.qpos[0:3] = self.data_collection["root_pos"][frame_idx, :]
-                self.data.qpos[3:7] = self.data_collection["root_rot"][frame_idx, [3,0,1,2]]
+                # self.data.qpos[3:7] = self.data_collection["root_rot"][frame_idx, :]
+                self.data.qpos[3:7] = self.data_collection["root_rot"][frame_idx, [3,0,1,2]] # xyzw to wxyz
                 # print(R.from_quat(self.data_collection["root_rot"][frame_idx, :],scalar_first=True).as_rotvec(degrees=True))
                 self.data.qpos[7:] = self.data_collection["dof_pos"][frame_idx, :]
                 self.data.qvel[:] = 0
@@ -335,8 +336,8 @@ if __name__ == "__main__":
 
     robot_xml_file_name = (
         # "/home/hpx/HPX_LOCO_2/GMR/assets/unitree_h1_2/h1_2_handless.xml"
-        "/home/hpx/HPX_LOCO_2/GMR/assets/rotaku_xs3/mjcf/rotaku_xs3_rl.xml"
-        # "/home/hpx/HPX_LOCO_2/GMR/assets/Q1/mjcf/Q1_wo_hand.xml"
+        # "/home/hpx/HPX_LOCO_2/GMR/assets/rotaku_xs3/mjcf/rotaku_xs3_rl.xml"
+        "/home/hpx/HPX_LOCO_2/GMR/assets/Q1/mjcf/Q1_wo_hand.xml"
         # "/home/hpx/HPX_LOCO_2/GMR/assets/h1_2/h1_2_wo_hand.xml"
     )
 
@@ -349,7 +350,7 @@ if __name__ == "__main__":
         # + "retargeting_data/Q1/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251014_single_action/251014_single_action_forward_walk.pkl"
-        + "retargeting_data/XS3/lafan_bvh/walk/walk1_subject1.pkl"
+        + "retargeting_data/Q1/AMASS/CMU/11/11_01_stageii.pkl"
         # + "retargeting_data/Q1/251021/251021_05_xingyiquan_120Hz.pkl"
         # "/home/hpx/HPX_LOCO_2/retargeting/retargeting_data/unitree_h1_2_xsens_ground_0917.pkl"
     )

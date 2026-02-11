@@ -121,6 +121,7 @@ assets/huaqin_x1_v0_9_6/*
 assets/Q1/*
 retargeting_data/*
 retargeting_data_csv/*
-*.json
+/*.json
+!/offsets.json
 Xsens/*
 AMASS/*

@@ -350,7 +350,7 @@ if __name__ == "__main__":
         # + "retargeting_data/Q1/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251014_single_action/251014_single_action_forward_walk.pkl"
-        + "retargeting_data/Q1/AMASS/CMU/11/11_01_stageii.pkl"
+        + "retargeting_data/Q1/100STYLE/Lunge/Lunge_FW.pkl"
         # + "retargeting_data/Q1/251021/251021_05_xingyiquan_120Hz.pkl"
         # "/home/hpx/HPX_LOCO_2/retargeting/retargeting_data/unitree_h1_2_xsens_ground_0917.pkl"
     )

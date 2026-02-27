@@ -78,6 +78,10 @@ class GeneralMotionRetargeting:
             ik_config["human_scale_table"][key] = (
                 ik_config["human_scale_table"][key] * ratio
             )
+        if "human_scale_table_2" in ik_config:
+            for key, entry in ik_config["human_scale_table_2"].items():
+                if isinstance(entry, dict) and "scale" in entry:
+                    entry["scale"] = entry["scale"] * ratio
 
         # used for retargeting
         self.ik_match_table1 = ik_config["ik_match_table1"]
@@ -87,6 +91,7 @@ class GeneralMotionRetargeting:
         self.use_ik_match_table1 = ik_config["use_ik_match_table1"]
         self.use_ik_match_table2 = ik_config["use_ik_match_table2"]
         self.human_scale_table = ik_config["human_scale_table"]
+        self.human_scale_table_2 = ik_config.get("human_scale_table_2")
         self.ground = ik_config["ground_height"] * np.array([0, 0, 1])
         self.max_iter = 10
 
@@ -157,10 +162,12 @@ class GeneralMotionRetargeting:
     def update_targets(self, human_data, offset_to_ground=False):
         # scale human data in local frame
         human_data = self.to_numpy(human_data)
-        human_data = self.scale_human_data(
-            human_data, self.human_root_name, self.human_scale_table
-            # human_data, self.human_root_name, self.human_scale_table_2
+        human_data = self.scale_human_data_2(
+            human_data, self.human_root_name, self.human_scale_table_2
         )
+        # human_data = self.scale_human_data(
+        #     human_data, self.human_root_name, self.human_scale_table
+        # )
         human_data = self.offset_human_data(
             human_data, self.pos_offsets1, self.rot_offsets1
         )
@@ -301,6 +308,81 @@ class GeneralMotionRetargeting:
                 human_data_local[body_name] + scaled_root_pos,
                 human_data[body_name][1],
             )
+
+        return human_data_global
+
+    def scale_human_data_2(self, human_data, human_root_name, human_scale_table):
+
+        # 新格式：按父子链进行缩放（子节点相对父节点的向量进行缩放）
+        scaled_pos = {}
+        root_pos, root_quat = human_data[human_root_name]
+        root_entry = human_scale_table.get(human_root_name, {})
+        root_scale = (
+            root_entry.get("scale", 1.0) if isinstance(root_entry, dict) else root_entry
+        )
+        # root 的父节点视为 world，只缩放 root 的全局位置
+        scaled_pos[human_root_name] = root_pos * root_scale
+
+        visiting = set()
+
+        def resolve_scaled_pos(body_name):
+            # 已经计算过则直接返回
+            if body_name in scaled_pos:
+                return scaled_pos[body_name]
+            if body_name in visiting:
+                # cycle detected, fall back to original position
+                scaled_pos[body_name] = human_data[body_name][0]
+                return scaled_pos[body_name]
+            visiting.add(body_name)
+
+            # 没有配置就原样返回
+            entry = human_scale_table.get(body_name)
+            if entry is None:
+                scaled_pos[body_name] = human_data[body_name][0]
+                visiting.remove(body_name)
+                return scaled_pos[body_name]
+
+            # 支持两种格式：
+            # 1) dict: {"scale": x, "parent": "ParentName"}
+            # 2) number: 仅 scale，parent 默认为 root
+            if isinstance(entry, dict):
+                parent = entry.get("parent", human_root_name)
+                scale = entry.get("scale", 1.0)
+            else:
+                parent = human_root_name
+                scale = entry
+
+            # parent 为空或为 "world" 时，父节点在世界坐标原点
+            if parent is None or str(parent).lower() == "world":
+                parent_pos = np.zeros(3)
+                parent_scaled = np.zeros(3)
+            elif parent not in human_data:
+                # 父节点在数据里不存在，回退为原位置
+                scaled_pos[body_name] = human_data[body_name][0]
+                visiting.remove(body_name)
+                return scaled_pos[body_name]
+            else:
+                # 先递归得到父节点的缩放后位置
+                parent_pos = human_data[parent][0]
+                parent_scaled = resolve_scaled_pos(parent)
+
+            # 子节点相对父节点的向量
+            vec = human_data[body_name][0] - parent_pos
+            # 缩放相对向量并加回父节点的缩放后位置
+            scaled_pos[body_name] = parent_scaled + vec * scale
+            visiting.remove(body_name)
+            return scaled_pos[body_name]
+
+        # 计算所有关节的缩放后位置（保留原姿态）
+        for body_name in human_data.keys():
+            resolve_scaled_pos(body_name)
+
+        human_data_global = {}
+        for body_name, (pos, quat) in human_data.items():
+            # 姿态不变，仅替换位置
+            if body_name not in human_scale_table:
+                continue
+            human_data_global[body_name] = (scaled_pos.get(body_name, pos), quat)
 
         return human_data_global
 

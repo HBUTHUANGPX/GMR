@@ -17,6 +17,57 @@
         "LeftWrist": 0.781
     },
 
+    "human_scale_table_2": {
+        "Hips": {
+            "scale": 0.881,
+            "parent": "world"
+        },
+        "Chest4": {
+            "scale": 0.881,
+            "parent": "Hips"
+        },
+        "LeftShoulder": {
+            "scale": 0.621,
+            "parent": "Hips"
+        },
+        "RightShoulder": {
+            "scale": 0.621,
+            "parent": "Hips"
+        },
+        "LeftElbow": {
+            "scale": 0.881,
+            "parent": "LeftShoulder"
+        },
+        "RightElbow": {
+            "scale": 0.881,
+            "parent": "RightShoulder"
+        },
+        "LeftWrist": {
+            "scale": 0.781,
+            "parent": "LeftElbow"
+        },
+        "RightWrist": {
+            "scale": 0.781,
+            "parent": "RightElbow"
+        },
+        "LeftKnee": {
+            "scale": 0.981,
+            "parent": "Hips"
+        },
+        "RightKnee": {
+            "scale": 0.981,
+            "parent": "Hips"
+        },
+        "LeftFootMod": {
+            "scale": 0.981,
+            "parent": "LeftKnee"
+        },
+        "RightFootMod": {
+            "scale": 0.981,
+            "parent": "RightKnee"
+        }
+    },
+
     "ik_match_table1": {
         "pelvis": [
             "Hips",
@@ -41,6 +92,70 @@
             [
                 0.0,
                 0.0,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "left_knee_link": [
+            "LeftKnee",
+            0,
+            5,
+            [
+                0.0,
+                0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "left_ankle_roll_link": [
+            "LeftFootMod",
+            50,
+            10,
+            [
+                0.0213,
+                0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "right_knee_link": [
+            "RightKnee",
+            0,
+            5,
+            [
+                0.0,
+                -0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "right_ankle_roll_link": [
+            "RightFootMod",
+            50,
+            10,
+            [
+                0.0213,
+                -0.041,
                 0.0
             ],
             [
@@ -116,7 +231,7 @@
         ],
         "left_wrist_yaw_link": [
             "LeftWrist",
-            50,
+            0,
             10,
             [
                 0.0,
@@ -132,7 +247,7 @@
         ],
         "right_wrist_yaw_link": [
             "RightWrist",
-            50,
+            0,
             10,
             [
                 0.0,
@@ -180,6 +295,70 @@
                 0
             ]
         ],
+        "left_knee_link": [
+            "LeftKnee",
+            0,
+            5,
+            [
+                0.0,
+                0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "left_ankle_roll_link": [
+            "LeftFootMod",
+            50,
+            10,
+            [
+                0.0213,
+                0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "right_knee_link": [
+            "RightKnee",
+            0,
+            5,
+            [
+                0.0,
+                -0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "right_ankle_roll_link": [
+            "RightFootMod",
+            50,
+            10,
+            [
+                0.0213,
+                -0.041,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
         "left_shoulder_roll_link": [
             "LeftShoulder",
             0,
@@ -246,7 +425,7 @@
         ],
         "left_wrist_yaw_link": [
             "LeftWrist",
-            50,
+            5,
             10,
             [
                 0.0,
@@ -262,7 +441,7 @@
         ],
         "right_wrist_yaw_link": [
             "RightWrist",
-            50,
+            5,
             10,
             [
                 0.0,

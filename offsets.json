@@ -45,7 +45,7 @@
         "Z": 0.0
     },
     "RightShoulder": {
-        "X": 0.0,
+        "X": -8.1,
         "Y": 0.0,
         "Z": 0.0
     },
@@ -59,7 +59,102 @@
         "Y": 0.0,
         "Z": 0.0
     },
-    "RightWrist_end_site": {
+    "RightFinger0": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger01": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger02": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger02_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger1": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger11": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger12": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger12_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger2": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger21": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger22": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger22_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger3": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger31": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger32": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger32_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger4": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger41": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger42": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "RightFinger42_end_site": {
         "X": 0.0,
         "Y": 0.0,
         "Z": 0.0
@@ -70,7 +165,7 @@
         "Z": 0.0
     },
     "LeftShoulder": {
-        "X": 0.0,
+        "X": 8.1,
         "Y": 0.0,
         "Z": 0.0
     },
@@ -84,7 +179,102 @@
         "Y": 0.0,
         "Z": 0.0
     },
-    "LeftWrist_end_site": {
+    "LeftFinger0": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger01": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger02": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger02_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger1": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger11": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger12": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger12_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger2": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger21": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger22": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger22_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger3": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger31": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger32": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger32_end_site": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger4": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger41": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger42": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+    },
+    "LeftFinger42_end_site": {
         "X": 0.0,
         "Y": 0.0,
         "Z": 0.0

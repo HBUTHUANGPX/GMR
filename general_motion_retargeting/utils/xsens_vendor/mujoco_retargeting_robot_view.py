@@ -337,7 +337,8 @@ if __name__ == "__main__":
     robot_xml_file_name = (
         # "/home/hpx/HPX_LOCO_2/GMR/assets/unitree_h1_2/h1_2_handless.xml"
         # "/home/hpx/HPX_LOCO_2/GMR/assets/rotaku_xs3/mjcf/rotaku_xs3_rl.xml"
-        "/home/hpx/HPX_LOCO_2/GMR/assets/Q1/mjcf/Q1_wo_hand.xml"
+        # "/home/hpx/HPX_LOCO_2/GMR/assets/Q1/mjcf/Q1_wo_hand.xml"
+        "/home/hpx/HPX_LOCO_2/GMR/assets/unitree_g1/g1_mocap_29dof.xml"
         # "/home/hpx/HPX_LOCO_2/GMR/assets/h1_2/h1_2_wo_hand.xml"
     )
 
@@ -350,7 +351,8 @@ if __name__ == "__main__":
         # + "retargeting_data/Q1/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251021/251021_01_slowly_walk_120Hz.pkl"
         # + "retargeting_data/XS3/251014_single_action/251014_single_action_forward_walk.pkl"
-        + "retargeting_data/Q1/100STYLE/Lunge/Lunge_FW.pkl"
+        + "retargeting_data/g1/xsens_bvh/251203/dance_03_120Hz.pkl"
+        # + "retargeting_data/Q1/100STYLE/Waving/Waving_BR.pkl"
         # + "retargeting_data/Q1/251021/251021_05_xingyiquan_120Hz.pkl"
         # "/home/hpx/HPX_LOCO_2/retargeting/retargeting_data/unitree_h1_2_xsens_ground_0917.pkl"
     )

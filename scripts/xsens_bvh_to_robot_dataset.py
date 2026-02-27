@@ -53,11 +53,18 @@ def process_file(bvh_file_path, tgt_file_path, tgt_robot, tgt_folder, total_file
         return
 
     # 初始化 retargeting 系统
-    if os.path.exists(path+"xsens_bvh_to_Q1.json"):
-        extern_ik_config_path = path+"xsens_bvh_to_Q1.json"
-        # print("use extern_ik_config_path:", extern_ik_config_path)
-    else:
-        extern_ik_config_path = None
+    if tgt_robot == "Q1":
+        if os.path.exists(path+"xsens_bvh_to_Q1.json"):
+            extern_ik_config_path = path+"xsens_bvh_to_Q1.json"
+            # print("use extern_ik_config_path:", extern_ik_config_path)
+        else:
+            extern_ik_config_path = None
+    elif tgt_robot == "unitree_g1":
+        if os.path.exists(path+"xsens_bvh_to_Q1.json"):
+            extern_ik_config_path = path+"xsens_bvh_to_g1.json"
+            # print("use extern_ik_config_path:", extern_ik_config_path)
+        else:
+            extern_ik_config_path = None
     retarget = GMR(
         src_human="xsens_bvh",
         tgt_robot=tgt_robot,

@@ -14,10 +14,10 @@ def bvh_parse(args):
         bvh_text, start=args.start, end=args.end, reset_to_zero=args.reset_to_zero
     )
     if hasattr(args, "offsets_file") and args.offsets_file is not None:
-        # print("Using offsets from: ", args.offsets_file)
+        print("Using offsets from: ", args.offsets_file)
         offset_manager = OffsetManager(default_path=args.offsets_file)
     else:   
-        # print("Using default offsets")
+        print("Using default offsets")
         offset_manager = OffsetManager(default_path="offsets.json")
     loaded_offsets = offset_manager.load_offsets()
     offsets = offset_manager.parse_to_window_format(parser.names, loaded_offsets)

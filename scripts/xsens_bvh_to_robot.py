@@ -169,7 +169,13 @@ if __name__ == "__main__":
 
         # retarget
         qpos = retargeter.retarget(smplx_data)
-
+        # 左腿 7:13 右腿 13:19 腰 19:22 左臂 22:29 右臂 29:36
+        # qpos[7] -= 0.22 # left_hip_pitch_link
+        # qpos[13] -= 0.22 # right_hip_pitch_link
+        # qpos[10] += 0.44 # left_knee_link
+        # qpos[16] += 0.44 # right_knee_link
+        # qpos[11] -= 0.22 # left_ankle_link
+        # qpos[17] -= 0.22 # right_ankle_link
         # visualize
         robot_motion_viewer.step(
             root_pos=qpos[:3],

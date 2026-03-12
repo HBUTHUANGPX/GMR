@@ -179,6 +179,8 @@ def get_smplx_data_offline_fast(smplx_data, body_model, smplx_output, tgt_fps=30
     }
     """
     src_fps = smplx_data["mocap_frame_rate"].item()
+    print("Source FPS:", src_fps)
+    print("Target FPS:", tgt_fps)
     frame_skip = int(src_fps / tgt_fps)
     num_frames = smplx_data["pose_body"].shape[0]
     global_orient = smplx_output.global_orient.squeeze()

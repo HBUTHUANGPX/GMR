@@ -2,7 +2,7 @@ import argparse
 import pathlib
 import os
 import time
-
+import re
 import numpy as np
 
 from general_motion_retargeting import GeneralMotionRetargeting as GMR
@@ -86,7 +86,11 @@ if __name__ == "__main__":
         src_human="smplx",
         tgt_robot=args.robot,
     )
-    
+    result = re.sub(r'^motion_data/|\.npz$', '', args.smplx_file)
+    target_save_path = f"retargeting_data/{args.robot}/{result}.pkl"
+    # print("处理结果：", target_save_path)
+    if args.save_path is None:
+        args.save_path = target_save_path
     robot_motion_viewer = RobotMotionViewer(robot_type=args.robot,
                                             motion_fps=aligned_fps,
                                             transparent_robot=0,

@@ -10,6 +10,7 @@ from rich import print
 from tqdm import tqdm
 import os
 import numpy as np
+import re
 
 if __name__ == "__main__":
 
@@ -29,6 +30,7 @@ if __name__ == "__main__":
         choices=[
             "unitree_g1",
             "unitree_h1_2",
+            "H2",
             "Q1",
             "X1",
             "XS3",
@@ -106,7 +108,10 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-
+    result = re.sub(r'^motion_data/|\.bvh$', '', args.bvh_file)
+    target_save_path = f"retargeting_data/{args.robot}/{result}.pkl"
+    if args.save_path is None:
+        args.save_path = target_save_path
     if args.save_path is not None:
         save_dir = os.path.dirname(args.save_path)
         if save_dir:  # Only create directory if it's not empty
@@ -126,6 +131,7 @@ if __name__ == "__main__":
 
     motion_fps = int(1/frame_time)
 
+    
     robot_motion_viewer = RobotMotionViewer(
         robot_type=args.robot,
         motion_fps=motion_fps,
@@ -156,7 +162,7 @@ if __name__ == "__main__":
         current_time = time.time()
         if current_time - fps_start_time >= fps_display_interval:
             actual_fps = fps_counter / (current_time - fps_start_time)
-            # print(f"Actual rendering FPS: {actual_fps:.2f}")
+            print(f"Actual rendering FPS: {actual_fps:.2f}")
             fps_counter = 0
             fps_start_time = current_time
 
@@ -182,7 +188,8 @@ if __name__ == "__main__":
             root_rot=qpos[3:7],
             dof_pos=qpos[7:],
             human_motion_data=retargeter.scaled_human_data,
-            rate_limit=args.rate_limit,
+            rate_limit=False,
+            # rate_limit=args.rate_limit,
             # human_pos_offset=np.array([0.0, 0.0, 0.0])
         )
 

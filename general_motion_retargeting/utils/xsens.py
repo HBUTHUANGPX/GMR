@@ -10,6 +10,7 @@ def bvh_parse(args):
     parser = BVHParser(axis_order="zxy", scale=args.scale)
     with open(args.bvh_file, "r") as f:
         bvh_text = f.read()
+    print("Parsing BVH file: ", args.bvh_file)
     rotations, positions = parser.parse(
         bvh_text, start=args.start, end=args.end, reset_to_zero=args.reset_to_zero
     )

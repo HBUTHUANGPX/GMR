@@ -6,15 +6,20 @@
     "use_ik_match_table1": true,
     "use_ik_match_table2": true,
     "human_scale_table": {
-        "Hips": 0.881,
-        "Chest4": 0.881,
+        "Hips": 1.17,
+        "Chest4": 1.17,
 
-        "LeftShoulder": 0.681,
-        "RightShoulder": 0.681,
-        "LeftElbow": 0.581,
-        "RightElbow": 0.581,
-        "RightWrist": 0.781,
-        "LeftWrist": 0.781
+        "LeftKnee": 1.2,
+        "RightKnee": 1.2,
+        "LeftFootMod": 1.2,
+        "RightFootMod": 1.2,
+
+        "LeftShoulder": 1.0,
+        "RightShoulder": 1.0,
+        "LeftElbow": 1.0,
+        "RightElbow": 1.0,
+        "RightWrist": 1.0,
+        "LeftWrist": 1.0
     },
 
     "human_scale_table_2": {

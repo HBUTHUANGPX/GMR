@@ -24,6 +24,70 @@
 
         "Head":0.98
     },
+    "human_scale_table_2": {
+        "Hips": {
+            "scale": 0.98,
+            "parent": "world"
+        },
+        "Chest4": {
+            "scale": 0.98,
+            "parent": "Hips"
+        },
+        "LeftHip": {
+            "scale": 0.98,
+            "parent": "Hips"
+        },
+        "RightHip": {
+            "scale": 0.98,
+            "parent": "Hips"
+        },
+        "LeftKnee": {
+            "scale": 0.98,
+            "parent": "LeftHip"
+        },
+        "RightKnee": {
+            "scale": 0.98,
+            "parent": "RightHip"
+        },
+        "LeftFootMod": {
+            "scale": 1.05,
+            "parent": "LeftKnee"
+        },
+        "RightFootMod": {
+            "scale": 1.05,
+            "parent": "RightKnee"
+        },
+
+        "LeftShoulder": {
+            "scale": 0.98,
+            "parent": "Chest4"
+        },
+        "RightShoulder": {
+            "scale": 0.98,
+            "parent": "Chest4"
+        },
+        "LeftElbow": {
+            "scale": 0.98,
+            "parent": "LeftShoulder"
+        },
+        "RightElbow": {
+            "scale": 0.98,
+            "parent": "RightShoulder"
+        },
+        "RightWrist": {
+            "scale": 0.98,
+            "parent": "RightElbow"
+        },
+        "LeftWrist": {
+            "scale": 0.98,
+            "parent": "LeftElbow"
+        },
+
+        "Head": {
+            "scale": 0.98,
+            "parent": "Chest4"
+        }
+    },
     "human_scale_table1111": {
         "Hips": 1.07,
         "Chest4": 0.98,

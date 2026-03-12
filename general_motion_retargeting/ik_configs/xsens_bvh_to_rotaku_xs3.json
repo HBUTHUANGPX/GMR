@@ -8,12 +8,10 @@
     "human_scale_table": {
         "Hips": 0.59,
         "Chest4": 0.59,
-        "LeftHip": 0.59,
-        "RightHip": 0.59,
         "LeftKnee": 0.59,
         "RightKnee": 0.59,
-        "LeftFootMod": 0.55,
-        "RightFootMod": 0.55,
+        "LeftFootMod": 0.59,
+        "RightFootMod": 0.59,
 
         "LeftShoulder":0.59,
         "RightShoulder":0.59,
@@ -26,7 +24,7 @@
             100,
             10,
             [
-                -0.02,
+                0.0,
                 0.0,
                 0.0
             ],
@@ -52,43 +50,11 @@
                 0,
                 0
             ]
-        ],        
-        "left_hip_yaw_link": [
-            "LeftHip",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
-        "right_hip_yaw_link": [
-            "RightHip",
-            0,
-            10,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
+        ],     
         "left_knee_link": [
             "LeftKnee",
             0,
-            10,
+            3,
             [
                 0.0,
                 0.016,
@@ -104,7 +70,7 @@
         "right_knee_link": [
             "RightKnee",
             0,
-            10,
+            3,
             [
                 0.0,
                 -0.016,
@@ -119,7 +85,7 @@
         ],
         "left_ankle_roll_link": [
             "LeftFootMod",
-            0,
+            50,
             10,
             [
                 0.0,
@@ -135,7 +101,7 @@
         ],
         "right_ankle_roll_link": [
             "RightFootMod",
-            0,
+            50,
             10,
             [
                 0.0,
@@ -220,7 +186,7 @@
             100,
             5,
             [
-                -0.02,
+                0.0,
                 0.0,
                 0.0
             ],
@@ -247,41 +213,9 @@
                 0
             ]
         ],
-        "left_hip_yaw_link": [
-            "LeftHip",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
-        "right_hip_yaw_link": [
-            "RightHip",
-            10,
-            5,
-            [
-                0.0,
-                0.0,
-                0.0
-            ],
-            [
-                1,
-                0,
-                0,
-                0
-            ]
-        ],
         "left_knee_link": [
             "LeftKnee",
-            10,
+            0,
             5,
             [
                 0.0,
@@ -297,7 +231,7 @@
         ],
         "right_knee_link": [
             "RightKnee",
-            10,
+            0,
             5,
             [
                 0.0,

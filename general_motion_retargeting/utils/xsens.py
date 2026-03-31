@@ -93,4 +93,5 @@ def load_xsens_file(args):
     human_height = result["Head_end_site"][0][2] - min(
         result["LeftToe_end_site"][0][2], result["LeftToe_end_site"][0][2]
     )
+    # human_height = None
     return frames, human_height, frame_time

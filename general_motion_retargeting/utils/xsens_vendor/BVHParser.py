@@ -324,7 +324,7 @@ class BVHParser:
                     # 转换为 MuJoCo 坐标系: BVH [X, Y, Z] -> MuJoCo [Z, X, Y]
                     mujoco_pos = [bvh_pos[i] * self.scale for i in self.axis_idx]
                     mujoco_rot = [bvh_rot[i] for i in self.axis_idx]
-                    if node.name == "Hips":
+                    if node.name == "Hips" or node.name == "Root":
                         self.positions[fi, node_idx] = mujoco_pos
                     self.rotations[fi, node_idx] = mujoco_rot
 
@@ -520,18 +520,27 @@ class BVHParser:
             if node.name == "Hips":
                 # frame_0[2] += 0.2/self.scale
                 pos_str = " ".join(f"{x:.6f}" for x in frame_0)
+            elif node.name == "Root":
+                ...
             else:
                 pos_str = " ".join(f"{x:.6f}" for x in node.offset)
 
-            xml = f'{spaces}<body name="{node.name}" pos="{pos_str}">\n'
+            if node.name == "Root":
+                xml = f''
+            else:
+                xml = f'{spaces}<body name="{node.name}" pos="{pos_str}">\n'
             if node.name == "Hips":  # Root
                 xml += f'{spaces}  <joint name="floating_base_joint" type="free" limited="false" actuatorfrclimited="false"/>\n'
+            elif node.name == "Root":
+                ...
             else:
                 xml += f'{spaces}  <joint type="ball" name="{node.name}_joint"/>\n'
             if node.name == "Hips":
                 xml += (
                     f'{spaces}  <geom type="sphere" size="{str(self.r*1.5)}" rgba="0.5 0.0 1.0 0.5"/>\n'
                 )
+            elif node.name == "Root":
+                ...
             elif node.name.endswith("_end_site"):
                 xml += (
                     f'{spaces}  <geom type="sphere" size="{str(self.r*1.5)}" rgba="1.0 0.5 0.0 0.5"/>\n'
@@ -546,12 +555,17 @@ class BVHParser:
                 pos_str = " ".join(f"{x/2:.6f}" for x in child.offset)
                 q_xyzw = R.align_vectors([v/l], [[0,0,1]])[0].as_quat(scalar_first = True).tolist()
                 q_str = " ".join(f"{x/2}" for x in q_xyzw)
-                xml += (
-                    f'{spaces}  <geom type="capsule" size="{str(self.r)} {str(np.clip(l*0.5 - self.r*2,min=0)+1e-5)}" pos="{pos_str}"  quat="{q_str}"  rgba="1.0 0.5 1.0 0.5"/>\n'
-                )
+                if node.name == "Root":
+                    ...
+                else:
+                    xml += (
+                        f'{spaces}  <geom type="capsule" size="{str(self.r)} {str(np.clip(l*0.5 - self.r*2,min=0)+1e-5)}" pos="{pos_str}"  quat="{q_str}"  rgba="1.0 0.5 1.0 0.5"/>\n'
+                    )
                 xml += generate_xml(child, indent + 2)
-
-            xml += f"{spaces}</body>\n"
+            if node.name == "Root":
+                xml += f''
+            else:
+                xml += f"{spaces}</body>\n"
             return xml
 
         xml_header = """<mujoco model="human_skeleton">

@@ -33,7 +33,7 @@ if __name__ == "__main__":
             "H2",
             "Q1",
             "X1",
-            "XS3",
+            "XS4",
         ],
         default="unitree_h1_2",
     )

@@ -125,3 +125,4 @@ retargeting_data_csv/*
 !/offsets.json
 Xsens/*
 AMASS/*
+assets/rotaku_xs4/*

@@ -2,21 +2,23 @@
     "robot_root_name": "pelvis",
     "human_root_name": "Hips",
     "ground_height": 0,
-    "human_height_assumption": 1.665,
+    "human_height_assumption": 1.66,
     "use_ik_match_table1": true,
     "use_ik_match_table2": true,
     "human_scale_table": {
-        "Hips": 0.59,
-        "Chest4": 0.59,
-        "LeftKnee": 0.59,
-        "RightKnee": 0.59,
-        "LeftFootMod": 0.59,
-        "RightFootMod": 0.59,
+        "Hips": 0.62,
+        "Chest4": 0.62,
+        "LeftKnee": 0.62,
+        "RightKnee": 0.62,
+        "LeftHip": 0.62,
+        "RightHip": 0.62,
+        "LeftFootMod": 0.62,
+        "RightFootMod": 0.62,
 
-        "LeftShoulder":0.59,
-        "RightShoulder":0.59,
-        "LeftElbow":0.59,
-        "RightElbow":0.59
+        "LeftShoulder":0.62,
+        "RightShoulder":0.62,
+        "LeftElbow":0.62,
+        "RightElbow":0.62
     },
     "ik_match_table1": {
         "pelvis": [
@@ -24,7 +26,7 @@
             100,
             10,
             [
-                0.0,
+                0.03,
                 0.0,
                 0.0
             ],
@@ -51,10 +53,42 @@
                 0
             ]
         ],     
+        "left_hip_yaw_link": [
+            "LeftHip",
+            0,
+            8,
+            [
+                0.0,
+                0.016,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],
+        "right_hip_yaw_link": [
+            "RightHip",
+            0,
+            8,
+            [
+                0.0,
+                -0.016,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],   
         "left_knee_link": [
             "LeftKnee",
             0,
-            3,
+            5,
             [
                 0.0,
                 0.016,
@@ -70,7 +104,7 @@
         "right_knee_link": [
             "RightKnee",
             0,
-            3,
+            5,
             [
                 0.0,
                 -0.016,
@@ -89,7 +123,7 @@
             10,
             [
                 0.0,
-                0.066,
+                0.021,
                 0
             ],
             [
@@ -105,7 +139,7 @@
             10,
             [
                 0.0,
-                -0.066,
+                -0.021,
                 0.0
             ],
             [
@@ -186,7 +220,7 @@
             100,
             5,
             [
-                0.0,
+                0.03,
                 0.0,
                 0.0
             ],
@@ -212,7 +246,39 @@
                 0,
                 0
             ]
+        ],  
+        "left_hip_yaw_link": [
+            "LeftHip",
+            0,
+            8,
+            [
+                0.0,
+                0.016,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
         ],
+        "right_hip_yaw_link": [
+            "RightHip",
+            0,
+            8,
+            [
+                0.0,
+                -0.016,
+                0.0
+            ],
+            [
+                1,
+                0,
+                0,
+                0
+            ]
+        ],  
         "left_knee_link": [
             "LeftKnee",
             0,
@@ -251,7 +317,7 @@
             10,
             [
                 0.0,
-                0.066,
+                0.021,
                 0
             ],
             [
@@ -267,7 +333,7 @@
             10,
             [
                 0.0,
-                -0.066,
+                -0.021,
                 0
             ],
             [
